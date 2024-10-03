@@ -24,4 +24,10 @@ public class Point
         Y += dy;
         Z += dz;
     }
+    public override string ToString()
+    {
+        return $"{X}, {Y}";
+    }
+    public static void Main(string[] args)
+    { }
 }
