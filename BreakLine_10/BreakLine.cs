@@ -10,7 +10,7 @@ class BreakLine
     }
     public long CountLines
     {
-        get { return CountPoints - 1; }
+        get { return CountPoints != 0 ? CountPoints - 1 : 0; }
     }
     public BreakLine()
     { }
@@ -30,15 +30,20 @@ class BreakLine
         for (int i = 1; i < points.Count; i++)
              Console.WriteLine($"Line {i}: {new Line(points[i - 1], points[i])}\n");
     } 
+    /// <summary>
+    /// Возвращает длину ломанной
+    /// </summary>
     public double GetLenght()
-    //<summary>
-    //Возвращает длину ломанной
-    //</summary>
     {
         double res = 0;
         for (int i = 1; i < points.Count; i++)
             res += Line.GetLen(points[i - 1], points[i]);
         return res;
+    }
+    public static void Main(string[] args)
+    {
+        Line line = new(new Point(0, 0, 0), new Point(1, 1, 1));
+        Console.WriteLine(line.GetAngle());
     }
 }
 
