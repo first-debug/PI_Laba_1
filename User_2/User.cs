@@ -1,35 +1,35 @@
-﻿namespace User_2;
-
-public class User
+﻿namespace User_2
 {
-    public string Lastname { get; set; }
-    public string Name { get; set; }
-    public string Surname { get; set; }
-    public short Age { get; set; }
-    public string FIO 
+    public class User
     {
-        get
+        public string Lastname { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public short Age { get; set; }
+        public string FIO
         {
-            return $"{Lastname} {Name} {Surname}"; 
-        }
-        set 
-        {
-            try
+            get => $"{Lastname} {Name} {Surname}";
+            
+            set
             {
-                string[] ls = value.Split(' ');
-                Lastname = ls[0];
-                Name = ls[1];
-                Surname = ls[2];
-            } catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    string[] ls = value.Split(' ');
+                    Lastname = ls[0];
+                    Name = ls[1];
+                    Surname = ls[2];
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
         }
-    }
-    public User(string lastName, string name, string surName)
-    {
-        Lastname = lastName;
-        Name = name;
-        Surname = surName;
+        public User(string lastName, string name, string surName)
+        {
+            Lastname = lastName;
+            Name = name;
+            Surname = surName;
+        }
     }
 }
