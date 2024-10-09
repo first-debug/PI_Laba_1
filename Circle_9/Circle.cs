@@ -9,7 +9,7 @@ class Circle(Point center, double radius)
 
     public string Info
     {
-        get => $"";
+        get => $"Center: {Center}, Radius: {Radius}, Len: {GetLen()}, Square: {GetSquare()}";
     }
     public Circle(int x, int y, double radius) : this(new(x, y), radius)
     { }
