@@ -4,8 +4,8 @@
     {
         public Point Start { get; set; } = leftUpPoint;
         public Point End { get; set; } = rightDownPoint;
-        public int Width { get; } = leftUpPoint.X - rightDownPoint.X;
-        public int Height { get; } = leftUpPoint.Y - rightDownPoint.Y;
+        public int Width { get; } = Math.Abs(leftUpPoint.X - rightDownPoint.X);
+        public int Height { get; } = Math.Abs(leftUpPoint.Y - rightDownPoint.Y);
         public string Info
         {
             get => $"Left up point: {Start}, right down point: {End}, " +
